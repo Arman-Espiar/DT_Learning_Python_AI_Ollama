@@ -13,18 +13,18 @@
 # **************************************************
 # Step (2) - 'generate()' method
 # **************************************************
-# import ollama
+import ollama
 
-# generate_completion = ollama.generate(
-#     model="gemma3:1b",
-#     prompt="Tell me a joke.",
-# )
+generate_completion = ollama.generate(
+    model="gemma3:1b",
+    prompt="Tell me a joke.",
+)
 
-# print("=" * 50)
-# print(generate_completion)
-# print("-" * 50)
-# print(generate_completion.response)
-# print("=" * 50)
+print("=" * 50)
+print(generate_completion)
+print("-" * 50)
+print(generate_completion.response)
+print("=" * 50)
 # **************************************************
 
 
@@ -828,13 +828,13 @@
 
 # def chat(
 #     messages: list[dict],
-#     base_url: str = BASE_URL,
 #     think: bool = False,
+#     base_url: str = BASE_URL,
 #     model_name: str = MODEL_NAME,
 #     temperature: float = TEMPERATURE,
 # ) -> str | None:
 #     """
-#     Chat complete offline Ollama function.
+#     Chat function.
 #     """
 
 #     client = Client(
@@ -966,7 +966,7 @@
 #     temperature: float = TEMPERATURE,
 # ) -> tuple[str | None, int, int]:
 #     """
-#     Chat complete offline Ollama function.
+#     Chat function.
 #     """
 
 #     client = Client(
@@ -975,7 +975,7 @@
 
 #     # NEW
 #     if notify:
-#         print("Chat started...")
+#         print(f"Ollama chat started ({model_name})...")
 
 #     response: ChatResponse = client.chat(
 #         think=think,
@@ -987,14 +987,14 @@
 
 #     # NEW
 #     if notify:
-#         print("Chat finished.")
+#         print(f"Ollama chat finished ({model_name}).")
 
 #     assistant_answer: str | None = response.message.content
 
 #     prompt_tokens: int = 0
 #     completion_tokens: int = 0
 
-#     if assistant_answer and response:
+#     if response and assistant_answer:
 #         if response.eval_count:
 #             completion_tokens = response.eval_count
 #         if response.prompt_eval_count:

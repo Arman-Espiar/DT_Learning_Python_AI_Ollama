@@ -1,5 +1,5 @@
 """
-Dariush Tasdighi Ollama module. Version: 2.0
+Dariush Tasdighi Ollama module. Version: 2.1
 """
 
 from ollama import Client
@@ -35,7 +35,7 @@ def chat(
     )
 
     if notify:
-        print("Chat started...")
+        print(f"Ollama chat started ({model_name})...")
 
     response: ChatResponse = client.chat(
         think=think,
@@ -46,14 +46,14 @@ def chat(
     )
 
     if notify:
-        print("Chat finished.")
+        print(f"Ollama chat finished ({model_name}).")
 
     assistant_answer: str | None = response.message.content
 
     prompt_tokens: int = 0
     completion_tokens: int = 0
 
-    if assistant_answer and response:
+    if response and assistant_answer:
         if response.eval_count:
             completion_tokens = response.eval_count
         if response.prompt_eval_count:

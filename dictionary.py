@@ -13,7 +13,7 @@ import dt_llm_utility as utility
 TEMPERATURE: float = 0
 
 # MODEL_NAME: str = "llama3.2:1b".strip().lower()  # هیچ جوابی نمی‌دهد
-# MODEL_NAME: str = "llama3.2:3b".strip().lower() # نسبتا دری وری جواب می‌دهد
+# MODEL_NAME: str = "llama3.2:3b".strip().lower()  # نسبتا دری وری جواب می‌دهد
 MODEL_NAME: str = "llama3.1:8b".strip().lower()  # تقریبا جواب خوبی می‌دهد
 # MODEL_NAME: str = "gemma3:1b".strip().lower()  # دری وری جواب می‌دهد
 # MODEL_NAME: str = "gemma3:4b".strip().lower()  # دری وری جواب می‌دهد

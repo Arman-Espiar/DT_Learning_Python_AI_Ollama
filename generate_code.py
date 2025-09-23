@@ -5,6 +5,7 @@ This is a code generator for EF Core.
 
 import os
 import time
+from rich import print
 import dt_ollama as ollama
 import dt_llm_utility as utility
 import generate_code_constants as constants
@@ -29,7 +30,7 @@ def main() -> None:
 شماره تلفن همراه - الزامی
 آیا نشانی پست الکترونیکی تایید شده؟
 آیا شماره تلفن همراه تایید شده؟
-گذروازه -
+گذروازه - الزامی
         """
 
         if user_prompt.lower() in utility.EXIT_COMMANDS:

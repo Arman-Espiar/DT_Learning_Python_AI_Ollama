@@ -40,7 +40,7 @@ messages.append(assistant_message)
 print("=" * 50)
 print(messages)
 
-# Serialization
+# Serialization: Object to Json String
 json_string: str = json.dumps(
     messages,
     indent=4,
@@ -50,7 +50,7 @@ json_string: str = json.dumps(
 print("-" * 50)
 print(json_string)
 
-# Deserialization
+# Deserialization: Json String to Object
 new_messages: list[dict] = json.loads(s=json_string)
 
 print("-" * 50)
@@ -109,7 +109,7 @@ print("=" * 50)
 
 # # Bad Practice
 # # file = open(file=JSON_FILE_PATH, mode="wt", encoding="utf-8")
-# # # ...
+# # file.write(json_string)
 # # file.close()
 
 # # Best Practice
@@ -117,7 +117,7 @@ print("=" * 50)
 #     file.write(json_string)
 
 # with open(file=JSON_FILE_PATH, mode="rt", encoding="utf-8") as file:
-#     new_json_string = file.read()
+#     new_json_string: str = file.read()
 
 # print("-" * 50)
 # print(new_json_string)

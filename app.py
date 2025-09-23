@@ -35,6 +35,7 @@ def main() -> None:
         start_time: float = time.time()
 
         assistant_answer, prompt_tokens, completion_tokens = ollama.chat(
+            notify=True,
             messages=messages,
         )
 
